@@ -51,9 +51,6 @@ submitButton.addEventListener("click", (e) => {
     myLibrary.splice(newCard.dataset.number, 1);
     newCard.remove();
   });
-
-  console.log(myLibrary.indexOf(newBook));
-  console.log(newCard.dataset.number);
 });
 
 for (let i = 0; i < myLibrary.length; i++) {

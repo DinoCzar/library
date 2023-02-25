@@ -15,3 +15,14 @@ function addBookToLibrary() {
 }
 
 console.log(myLibrary);
+
+const title = document.querySelector("#title");
+const author = document.querySelector("#author");
+const pages = document.querySelector("#pages");
+const read = document.querySelector("#read");
+
+const submit_Button = document.querySelector("button");
+
+submit_Button.addEventListener("click", (e) => {
+  console.log(title.value + author.value + pages.value + read.value);
+});

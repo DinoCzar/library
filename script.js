@@ -10,10 +10,6 @@ function Book(title, author, pages, read) {
   };
 }
 
-function addBookToLibrary() {
-  myLibrary.push(Book.info);
-}
-
 const title = document.querySelector("#title");
 const author = document.querySelector("#author");
 const pages = document.querySelector("#pages");
@@ -23,13 +19,8 @@ const submit_Button = document.querySelector("button");
 
 const book_Display = document.querySelector("#book-display");
 
-book_Display.textContent = myLibrary;
-
 submit_Button.addEventListener("click", (e) => {
   const newBook = new Book(title.value, author.value, pages.value, read.value);
-  console.log(newBook.info());
   myLibrary.push(newBook.info());
-  console.log(myLibrary);
+  book_Display.textContent = myLibrary;
 });
-
-console.log(myLibrary);

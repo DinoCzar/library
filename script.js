@@ -47,6 +47,10 @@ submitButton.addEventListener("click", (e) => {
   newButton.textContent = "Remove";
   newCard.appendChild(newButton);
 
+  newButton.addEventListener("click", (e) => {
+    myLibrary.splice(newCard.dataset.number, 1);
+  });
+
   console.log(myLibrary.indexOf(newBook));
   console.log(newCard.dataset.number);
 });

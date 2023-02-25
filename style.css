@@ -21,3 +21,7 @@ button {
   width: 200px;
   background-color: lightblue;
 }
+
+#modal {
+  display: none;
+}

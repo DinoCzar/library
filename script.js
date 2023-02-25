@@ -34,6 +34,7 @@ submitButton.addEventListener("click", (e) => {
 
   const newCard = document.createElement("div");
   newCard.classList.add("new-card");
+  newCard.dataset.number = myLibrary.indexOf(newBook);
   bookDisplay.appendChild(newCard);
 
   const newDiv = document.createElement("div");
@@ -45,6 +46,9 @@ submitButton.addEventListener("click", (e) => {
   newButton.classList.add("new-button");
   newButton.textContent = "Remove";
   newCard.appendChild(newButton);
+
+  console.log(myLibrary.indexOf(newBook));
+  console.log(newCard.dataset.number);
 });
 
 for (let i = 0; i < myLibrary.length; i++) {

@@ -32,9 +32,13 @@ submitButton.addEventListener("click", (e) => {
   pages.value = "";
   read.value = "";
 
-  for (let i = 0; i < myLibrary.length; i++) {
-    const newDiv = document.createElement("div");
-    newDiv.textContent = myLibrary[i].info();
-    bookDisplay.appendChild(newDiv);
-  }
+  const newDiv = document.createElement("div");
+  newDiv.textContent = newBook.info();
+  bookDisplay.appendChild(newDiv);
 });
+
+for (let i = 0; i < myLibrary.length; i++) {
+  const newDiv = document.createElement("div");
+  newDiv.textContent = myLibrary[i].info();
+  bookDisplay.appendChild(newDiv);
+}

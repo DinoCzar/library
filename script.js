@@ -10,4 +10,8 @@ function Book(title, author, pages, read) {
   };
 }
 
-function addBookToLibrary() {}
+function addBookToLibrary() {
+  myLibrary.push(newBook);
+}
+
+console.log(myLibrary);

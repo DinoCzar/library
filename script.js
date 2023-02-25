@@ -33,6 +33,8 @@ submitButton.addEventListener("click", (e) => {
   read.value = "";
 
   for (let i = 0; i < myLibrary.length; i++) {
-    bookDisplay.textContent += myLibrary[i].info();
+    const newDiv = document.createElement("div");
+    newDiv.textContent = myLibrary[i].info();
+    bookDisplay.appendChild(newDiv);
   }
 });

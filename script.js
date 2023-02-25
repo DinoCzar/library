@@ -24,3 +24,7 @@ submit_Button.addEventListener("click", (e) => {
   myLibrary.push(newBook.info());
   book_Display.textContent = myLibrary;
 });
+
+for (let i = 0; i < myLibrary.length; i++) {
+  book_Display.textContent += myLibrary[i];
+}

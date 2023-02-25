@@ -37,6 +37,6 @@ button {
   font-size: 18px;
 }
 
-.new-button {
+.remove-button {
   grid-column-start: 2;
 }

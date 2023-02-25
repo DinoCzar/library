@@ -42,12 +42,12 @@ submitButton.addEventListener("click", (e) => {
   newDiv.classList.add("new-div");
   newCard.appendChild(newDiv);
 
-  const newButton = document.createElement("button");
-  newButton.classList.add("new-button");
-  newButton.textContent = "Remove";
-  newCard.appendChild(newButton);
+  const removeButton = document.createElement("button");
+  removeButton.classList.add("remove-button");
+  removeButton.textContent = "Remove";
+  newCard.appendChild(removeButton);
 
-  newButton.addEventListener("click", (e) => {
+  removeButton.addEventListener("click", (e) => {
     myLibrary.splice(newCard.dataset.number, 1);
     newCard.remove();
   });

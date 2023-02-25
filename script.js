@@ -26,10 +26,9 @@ newBook.addEventListener("click", (e) => {
 submit_Button.addEventListener("click", (e) => {
   const newBook = new Book(title.value, author.value, pages.value, read.value);
   myLibrary.push(newBook.info());
-  book_Display.textContent = myLibrary;
   modal.style.display = "none";
-});
 
-for (let i = 0; i < myLibrary.length; i++) {
-  book_Display.textContent += myLibrary[i];
-}
+  for (let i = 0; i < myLibrary.length; i++) {
+    book_Display.textContent += myLibrary[i];
+  }
+});

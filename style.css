@@ -18,8 +18,10 @@ button {
 
 #book-display {
   height: 100px;
-  width: 200px;
   background-color: lightblue;
+  padding: 10px;
+  display: grid;
+  gap: 5px;
 }
 
 #modal {

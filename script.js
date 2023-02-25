@@ -14,8 +14,6 @@ function addBookToLibrary() {
   myLibrary.push(Book.info);
 }
 
-console.log(myLibrary);
-
 const title = document.querySelector("#title");
 const author = document.querySelector("#author");
 const pages = document.querySelector("#pages");
@@ -28,5 +26,10 @@ const book_Display = document.querySelector("#book-display");
 book_Display.textContent = myLibrary;
 
 submit_Button.addEventListener("click", (e) => {
-  console.log(title.value + author.value + pages.value + read.value);
+  const newBook = new Book(title.value, author.value, pages.value, read.value);
+  console.log(newBook.info());
+  myLibrary.push(newBook.info());
+  console.log(myLibrary);
 });
+
+console.log(myLibrary);

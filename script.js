@@ -32,9 +32,19 @@ submitButton.addEventListener("click", (e) => {
   pages.value = "";
   read.value = "";
 
+  const newCard = document.createElement("div");
+  newCard.classList.add("new-card");
+  bookDisplay.appendChild(newCard);
+
   const newDiv = document.createElement("div");
   newDiv.textContent = newBook.info();
-  bookDisplay.appendChild(newDiv);
+  newDiv.classList.add("new-div");
+  newCard.appendChild(newDiv);
+
+  const newButton = document.createElement("button");
+  newButton.classList.add("new-button");
+  newButton.textContent = "Remove";
+  newCard.appendChild(newButton);
 });
 
 for (let i = 0; i < myLibrary.length; i++) {

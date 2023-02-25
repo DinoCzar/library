@@ -21,9 +21,22 @@ button {
   background-color: lightblue;
   padding: 10px;
   display: grid;
-  gap: 5px;
+  gap: 10px;
 }
 
 #modal {
   display: none;
+}
+
+.new-card {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+}
+
+.new-div {
+  font-size: 18px;
+}
+
+.new-button {
+  grid-column-start: 2;
 }

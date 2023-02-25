@@ -27,6 +27,10 @@ submitButton.addEventListener("click", (e) => {
   const newBook = new Book(title.value, author.value, pages.value, read.value);
   myLibrary.push(newBook);
   modal.style.display = "none";
+  title.value = "";
+  author.value = "";
+  pages.value = "";
+  read.value = "";
 
   for (let i = 0; i < myLibrary.length; i++) {
     bookDisplay.textContent += myLibrary[i].info();

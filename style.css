@@ -15,3 +15,9 @@ button {
   height: 30px;
   border-radius: 10px 10px 10px 10px;
 }
+
+#book-display {
+  height: 100px;
+  width: 200px;
+  background-color: lightblue;
+}

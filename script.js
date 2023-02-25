@@ -11,7 +11,7 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-  myLibrary.push(newBook);
+  myLibrary.push(Book.info);
 }
 
 console.log(myLibrary);
@@ -22,6 +22,10 @@ const pages = document.querySelector("#pages");
 const read = document.querySelector("#read");
 
 const submit_Button = document.querySelector("button");
+
+const book_Display = document.querySelector("#book-display");
+
+book_Display.textContent = myLibrary;
 
 submit_Button.addEventListener("click", (e) => {
   console.log(title.value + author.value + pages.value + read.value);

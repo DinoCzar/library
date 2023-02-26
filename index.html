@@ -12,34 +12,23 @@
     <button id="add-book">Add Book</button>
     <div id="modal">
       <fieldset>
-        <legend>Library</legend>
+        <legend>Add New Book</legend>
         <div class="form">
-          <label for="title">Title:</label>
-          <input
-            type="text"
-            name="title"
-            id="title"
-            placeholder="ex: The Two Towers"
-          />
+          <input type="text" name="title" id="title" placeholder="Title" />
         </div>
         <div class="form">
-          <label for="author">Author:</label>
-          <input
-            type="text"
-            name="author"
-            id="author"
-            placeholder="ex: J.R.R. Tolkien"
-          />
+          <input type="text" name="author" id="author" placeholder="Author" />
         </div>
         <div class="form">
-          <label for="pages">Number of Pages:</label>
-          <input type="text" name="pages" id="pages" placeholder="ex: 352" />
+          <input type="text" name="pages" id="pages" placeholder="Pages" />
         </div>
-        <div class="form">
-          <label for="read">Have you read this book? (Check box if yes):</label>
+        <div class="form" id="form-read">
+          <label for="read">Have you read it?</label>
           <input type="checkbox" name="read" id="read" />
         </div>
-        <button type="submit" id="submit">Submit</button>
+        <div id="submit-button">
+          <button type="submit" id="submit">Submit</button>
+        </div>
       </fieldset>
     </div>
     <div id="book-display"></div>

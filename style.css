@@ -1,39 +1,65 @@
-fieldset {
-  display: grid;
-  gap: 10px;
-  padding: 20px;
+body {
+  background-color: #ecfdf5;
+  font-size: 20px;
 }
 
-fieldset input {
-  justify-self: left;
+#modal {
+  display: none;
+  position: absolute;
+  background-color: #d1fae5;
+  padding: 15px;
+}
+
+fieldset {
+  display: grid;
+  border: none;
+  gap: 15px;
+}
+
+legend {
+  text-align: center;
+  padding: 15px;
+}
+
+input,
+button {
+  width: 225px;
+  border: none;
+  border-radius: 10px 10px 10px;
+  font-size: 20px;
+  margin: 0px;
+  padding: 15px;
 }
 
 .form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 5px;
+}
+
+#form-read {
+  justify-content: center;
+  gap: 15px;
+}
+
+#form-read input {
+  grid-column-start: 2;
+  justify-self: start;
+  width: 20px;
+}
+
+#submit-button {
+  display: grid;
+  justify-content: center;
 }
 
 button {
-  width: 70px;
-  height: 35px;
-  border-radius: 10px 10px 10px 10px;
-  font-size: 12px;
+  background-color: #6ee7b7;
+  width: 255px;
 }
 
 #book-display {
   padding: 15px;
   display: grid;
   gap: 15px;
-}
-
-#modal {
-  display: none;
-  position: absolute;
-  background-color: lightblue;
-  border: solid;
-  border-width: 1px;
-  padding: 10px;
 }
 
 .new-card {
@@ -55,7 +81,6 @@ button {
 
 .right-div {
   grid-area: 1 / 2 / 3 / 3;
-  font-size: 16px;
   display: grid;
   grid-template-rows: 1fr 1fr;
   align-items: center;

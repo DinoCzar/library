@@ -59,6 +59,16 @@ submitButton.addEventListener("click", (e) => {
     newBook.read = "Not Read Yet";
   }
 
+  const readButton = document.createElement("button");
+  readButton.classList.add("read-button");
+  readButton.textContent = "Mark As Read";
+  rightDiv.appendChild(readButton);
+
+  readButton.addEventListener("click", (e) => {
+    newBook.read = "Read";
+    readCheckbox.checked = true;
+  });
+
   myLibrary.push(newBook);
   modal.style.display = "none";
   title.value = "";

@@ -28,13 +28,33 @@ button {
 
 .new-card {
   display: grid;
-  grid-template-columns: 1fr 100px;
+  grid-template-columns: 2fr 1fr;
 }
 
-.new-div {
+.left-div {
   font-size: 18px;
+  display: grid;
+  align-items: center;
+}
+
+.right-div {
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 1fr 50px 100px;
+  align-items: center;
+}
+
+.read-label {
+  grid-column-start: 1;
+  justify-self: end;
+}
+
+.read-checkbox {
+  grid-column-start: 2;
+  justify-self: center;
 }
 
 .remove-button {
-  grid-column-start: 2;
+  grid-column-start: 3;
+  justify-self: center;
 }

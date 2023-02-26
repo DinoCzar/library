@@ -30,21 +30,27 @@ submitButton.addEventListener("click", (e) => {
   newCard.dataset.number = myLibrary.indexOf(newBook);
   bookDisplay.appendChild(newCard);
 
-  const newDiv = document.createElement("div");
-  newDiv.textContent = newBook.info();
-  newDiv.classList.add("new-div");
-  newCard.appendChild(newDiv);
+  const leftDiv = document.createElement("div");
+  leftDiv.textContent = newBook.info();
+  leftDiv.classList.add("left-div");
+  newCard.appendChild(leftDiv);
+
+  const rightDiv = document.createElement("div");
+  rightDiv.classList.add("right-div");
+  newCard.appendChild(rightDiv);
 
   const readLabel = document.createElement("label");
   readLabel.setAttribute("for", "read-checkbox");
   readLabel.textContent = "Read (Y/N): ";
-  newCard.appendChild(readLabel);
+  readLabel.classList.add("read-label");
+  rightDiv.appendChild(readLabel);
 
   const readCheckbox = document.createElement("input");
   readCheckbox.setAttribute("type", "checkbox");
   readCheckbox.setAttribute("id", "read-checkbox");
   readCheckbox.setAttribute("name", "read-checkbox");
-  newCard.appendChild(readCheckbox);
+  readCheckbox.classList.add("read-checkbox");
+  rightDiv.appendChild(readCheckbox);
 
   if (read.checked == true) {
     newBook.read = "Read";
@@ -63,7 +69,7 @@ submitButton.addEventListener("click", (e) => {
   const removeButton = document.createElement("button");
   removeButton.classList.add("remove-button");
   removeButton.textContent = "Remove";
-  newCard.appendChild(removeButton);
+  rightDiv.appendChild(removeButton);
 
   removeButton.addEventListener("click", (e) => {
     myLibrary.splice(newCard.dataset.number, 1);

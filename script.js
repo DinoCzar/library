@@ -25,10 +25,31 @@ newBook.addEventListener("click", (e) => {
 submitButton.addEventListener("click", (e) => {
   const newBook = new Book(title.value, author.value, pages.value);
 
+  const newCard = document.createElement("div");
+  newCard.classList.add("new-card");
+  newCard.dataset.number = myLibrary.indexOf(newBook);
+  bookDisplay.appendChild(newCard);
+
+  const newDiv = document.createElement("div");
+  newDiv.textContent = newBook.info();
+  newDiv.classList.add("new-div");
+  newCard.appendChild(newDiv);
+
   if (read.checked == true) {
     newBook.read = "Read";
+    const readCheckbox = document.createElement("input");
+    readCheckbox.setAttribute("type", "checkbox");
+    readCheckbox.setAttribute("id", "read-checkbox");
+    readCheckbox.setAttribute("name", "read-checkbox");
+    readCheckbox.checked = true;
+    newCard.appendChild(readCheckbox);
   } else {
     newBook.read = "Not Read Yet";
+    const readCheckbox = document.createElement("input");
+    readCheckbox.setAttribute("type", "checkbox");
+    readCheckbox.setAttribute("id", "read-checkbox");
+    readCheckbox.setAttribute("name", "read-checkbox");
+    newCard.appendChild(readCheckbox);
   }
 
   console.log(newBook.read);
@@ -39,16 +60,6 @@ submitButton.addEventListener("click", (e) => {
   author.value = "";
   pages.value = "";
   read.checked = false;
-
-  const newCard = document.createElement("div");
-  newCard.classList.add("new-card");
-  newCard.dataset.number = myLibrary.indexOf(newBook);
-  bookDisplay.appendChild(newCard);
-
-  const newDiv = document.createElement("div");
-  newDiv.textContent = newBook.info();
-  newDiv.classList.add("new-div");
-  newCard.appendChild(newDiv);
 
   const removeButton = document.createElement("button");
   removeButton.classList.add("remove-button");

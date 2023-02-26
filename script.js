@@ -17,9 +17,11 @@ const submitButton = document.querySelector("#submit");
 const bookDisplay = document.querySelector("#book-display");
 const newBook = document.querySelector("#add-book");
 const modal = document.querySelector("#modal");
+const overlay = document.querySelector("#overlay");
 
 newBook.addEventListener("click", (e) => {
   modal.style.display = "block";
+  overlay.style.display = "block";
 });
 
 submitButton.addEventListener("click", (e) => {
@@ -71,6 +73,7 @@ submitButton.addEventListener("click", (e) => {
 
   myLibrary.push(newBook);
   modal.style.display = "none";
+  overlay.style.display = "none";
   title.value = "";
   author.value = "";
   pages.value = "";

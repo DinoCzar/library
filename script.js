@@ -4,9 +4,6 @@ function Book(title, author, pages) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.info = function () {
-    return title + " by " + author + ", " + pages + " pages.";
-  };
 }
 
 const title = document.querySelector("#title");
@@ -27,32 +24,32 @@ newBook.addEventListener("click", (e) => {
 submitButton.addEventListener("click", (e) => {
   const newBook = new Book(title.value, author.value, pages.value);
 
+  modal.style.display = "none";
+  overlay.style.display = "none";
+
   const newCard = document.createElement("div");
   newCard.classList.add("new-card");
   newCard.dataset.number = myLibrary.indexOf(newBook);
   bookDisplay.appendChild(newCard);
 
-  const leftDiv = document.createElement("div");
-  leftDiv.textContent = newBook.info();
-  leftDiv.classList.add("left-div");
-  newCard.appendChild(leftDiv);
+  const titleDiv = document.createElement("div");
+  titleDiv.textContent = newBook.title;
+  titleDiv.classList.add("title-div");
+  newCard.appendChild(titleDiv);
 
-  const rightDiv = document.createElement("div");
-  rightDiv.classList.add("right-div");
-  newCard.appendChild(rightDiv);
+  const authorDiv = document.createElement("div");
+  authorDiv.textContent = newBook.author;
+  authorDiv.classList.add("author-div");
+  newCard.appendChild(authorDiv);
 
-  const readLabel = document.createElement("label");
-  readLabel.setAttribute("for", "read-checkbox");
-  readLabel.textContent = "Read:";
-  readLabel.classList.add("read-label");
-  newCard.appendChild(readLabel);
+  const pagesDiv = document.createElement("div");
+  pagesDiv.textContent = newBook.pages;
+  pagesDiv.classList.add("pages-div");
+  newCard.appendChild(pagesDiv);
 
-  const readCheckbox = document.createElement("input");
-  readCheckbox.setAttribute("type", "checkbox");
-  readCheckbox.setAttribute("id", "read-checkbox");
-  readCheckbox.setAttribute("name", "read-checkbox");
-  readCheckbox.classList.add("read-checkbox");
-  newCard.appendChild(readCheckbox);
+  const buttonsDiv = document.createElement("div");
+  buttonsDiv.classList.add("buttons-div");
+  newCard.appendChild(buttonsDiv);
 
   if (read.checked == true) {
     newBook.read = "Read";
@@ -63,8 +60,8 @@ submitButton.addEventListener("click", (e) => {
 
   const readButton = document.createElement("button");
   readButton.classList.add("read-button");
-  readButton.textContent = "Mark As Read";
-  rightDiv.appendChild(readButton);
+  readButton.textContent = "Read";
+  buttonsDiv.appendChild(readButton);
 
   readButton.addEventListener("click", (e) => {
     newBook.read = "Read";
@@ -72,8 +69,6 @@ submitButton.addEventListener("click", (e) => {
   });
 
   myLibrary.push(newBook);
-  modal.style.display = "none";
-  overlay.style.display = "none";
   title.value = "";
   author.value = "";
   pages.value = "";
@@ -82,7 +77,7 @@ submitButton.addEventListener("click", (e) => {
   const removeButton = document.createElement("button");
   removeButton.classList.add("remove-button");
   removeButton.textContent = "Remove Book";
-  rightDiv.appendChild(removeButton);
+  buttonsDiv.appendChild(removeButton);
 
   removeButton.addEventListener("click", (e) => {
     myLibrary.splice(newCard.dataset.number, 1);

@@ -32,6 +32,10 @@ header button {
   padding: 50px;
 }
 
+#add-book {
+  width: 175px;
+}
+
 #modal {
   display: none;
   position: fixed;
@@ -105,31 +109,34 @@ button {
   padding: 15px;
   display: grid;
   gap: 15px;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 200px;
 }
 
 .new-card {
   display: grid;
-  grid-template-columns: 1fr 100px;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 2fr;
   padding: 10px;
-  font-size: 16px;
+  font-size: 20px;
   border: solid;
   border-width: 1px;
 }
 
-.left-div {
-  grid-area: 1 / 1 / 2 / 2;
-  font-size: 20px;
-  display: grid;
-  align-items: center;
+.title-div {
+  grid-row-start: 1;
 }
 
-.right-div {
-  grid-area: 1 / 2 / 3 / 3;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  align-items: center;
-  gap: 10px;
+.author-div {
+  grid-row-start: 2;
+}
+
+.pages-div {
+  grid-row-start: 3;
+}
+
+.buttons-div {
+  grid-row-start: 4;
 }
 
 .read-label,

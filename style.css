@@ -146,10 +146,14 @@ button {
   justify-items: center;
 }
 
-.remove-button {
+.read-button {
   grid-row-start: 1;
 }
 
-.read-button {
+.not-read {
+  background-color: #fca5a5;
+}
+
+.remove-button {
   grid-row-start: 2;
 }

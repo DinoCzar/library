@@ -35,24 +35,23 @@ submitButton.addEventListener("click", (e) => {
   newDiv.classList.add("new-div");
   newCard.appendChild(newDiv);
 
+  const readLabel = document.createElement("label");
+  readLabel.setAttribute("for", "read-checkbox");
+  readLabel.textContent = "Read (Y/N): ";
+  newCard.appendChild(readLabel);
+
+  const readCheckbox = document.createElement("input");
+  readCheckbox.setAttribute("type", "checkbox");
+  readCheckbox.setAttribute("id", "read-checkbox");
+  readCheckbox.setAttribute("name", "read-checkbox");
+  newCard.appendChild(readCheckbox);
+
   if (read.checked == true) {
     newBook.read = "Read";
-    const readCheckbox = document.createElement("input");
-    readCheckbox.setAttribute("type", "checkbox");
-    readCheckbox.setAttribute("id", "read-checkbox");
-    readCheckbox.setAttribute("name", "read-checkbox");
     readCheckbox.checked = true;
-    newCard.appendChild(readCheckbox);
   } else {
     newBook.read = "Not Read Yet";
-    const readCheckbox = document.createElement("input");
-    readCheckbox.setAttribute("type", "checkbox");
-    readCheckbox.setAttribute("id", "read-checkbox");
-    readCheckbox.setAttribute("name", "read-checkbox");
-    newCard.appendChild(readCheckbox);
   }
-
-  console.log(newBook.read);
 
   myLibrary.push(newBook);
   modal.style.display = "none";

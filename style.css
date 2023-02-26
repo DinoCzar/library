@@ -4,6 +4,10 @@ fieldset {
   padding: 20px;
 }
 
+fieldset input {
+  justify-self: left;
+}
+
 .form {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -11,10 +15,10 @@ fieldset {
 }
 
 button {
-  width: 60px;
+  width: 70px;
   height: 35px;
   border-radius: 10px 10px 10px 10px;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 #book-display {
@@ -25,6 +29,11 @@ button {
 
 #modal {
   display: none;
+  position: absolute;
+  background-color: lightblue;
+  border: solid;
+  border-width: 1px;
+  padding: 10px;
 }
 
 .new-card {

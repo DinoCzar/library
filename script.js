@@ -41,16 +41,16 @@ submitButton.addEventListener("click", (e) => {
 
   const readLabel = document.createElement("label");
   readLabel.setAttribute("for", "read-checkbox");
-  readLabel.textContent = "Read (Y/N): ";
+  readLabel.textContent = "Read:";
   readLabel.classList.add("read-label");
-  rightDiv.appendChild(readLabel);
+  newCard.appendChild(readLabel);
 
   const readCheckbox = document.createElement("input");
   readCheckbox.setAttribute("type", "checkbox");
   readCheckbox.setAttribute("id", "read-checkbox");
   readCheckbox.setAttribute("name", "read-checkbox");
   readCheckbox.classList.add("read-checkbox");
-  rightDiv.appendChild(readCheckbox);
+  newCard.appendChild(readCheckbox);
 
   if (read.checked == true) {
     newBook.read = "Read";
@@ -78,7 +78,7 @@ submitButton.addEventListener("click", (e) => {
 
   const removeButton = document.createElement("button");
   removeButton.classList.add("remove-button");
-  removeButton.textContent = "Remove";
+  removeButton.textContent = "Remove Book";
   rightDiv.appendChild(removeButton);
 
   removeButton.addEventListener("click", (e) => {

@@ -1,12 +1,11 @@
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = read;
   this.info = function () {
-    return title + " by " + author + ", " + pages + " pages, " + read;
+    return title + " by " + author + ", " + pages + " pages.";
   };
 }
 
@@ -24,13 +23,22 @@ newBook.addEventListener("click", (e) => {
 });
 
 submitButton.addEventListener("click", (e) => {
-  const newBook = new Book(title.value, author.value, pages.value, read.value);
+  const newBook = new Book(title.value, author.value, pages.value);
+
+  if (read.checked == true) {
+    newBook.read = "Read";
+  } else {
+    newBook.read = "Not Read Yet";
+  }
+
+  console.log(newBook.read);
+
   myLibrary.push(newBook);
   modal.style.display = "none";
   title.value = "";
   author.value = "";
   pages.value = "";
-  read.value = "";
+  read.checked = false;
 
   const newCard = document.createElement("div");
   newCard.classList.add("new-card");

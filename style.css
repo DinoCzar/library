@@ -108,19 +108,23 @@ button {
 #book-display {
   padding: 15px;
   display: grid;
-  gap: 15px;
+  gap: 20px;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  height: 200px;
+  justify-items: center;
+  justify-content: space-evenly;
 }
 
 .new-card {
   display: grid;
+  width: 260px;
   grid-template-rows: 1fr 1fr 1fr 2fr;
-  padding: 10px;
+  background-color: white;
+  padding: 15px;
   font-size: 20px;
-  border: solid;
-  border-width: 1px;
+  border: none;
+  border-radius: 10px 10px 10px 10px;
+  text-align: center;
 }
 
 .title-div {
@@ -137,25 +141,15 @@ button {
 
 .buttons-div {
   grid-row-start: 4;
-}
-
-.read-label,
-.read-checkbox {
-  grid-area: 2 / 1 / 3 / 2;
-  align-self: center;
-  justify-self: start;
-}
-
-.read-checkbox {
-  margin-left: 50px;
+  display: grid;
+  gap: 15px;
+  justify-items: center;
 }
 
 .remove-button {
   grid-row-start: 1;
-  justify-self: end;
 }
 
 .read-button {
   grid-row-start: 2;
-  justify-self: end;
 }

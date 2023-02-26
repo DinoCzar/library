@@ -33,17 +33,17 @@ submitButton.addEventListener("click", (e) => {
   bookDisplay.appendChild(newCard);
 
   const titleDiv = document.createElement("div");
-  titleDiv.textContent = newBook.title;
+  titleDiv.textContent = ' " ' + newBook.title + ' " ';
   titleDiv.classList.add("title-div");
   newCard.appendChild(titleDiv);
 
   const authorDiv = document.createElement("div");
-  authorDiv.textContent = newBook.author;
+  authorDiv.textContent = "by " + newBook.author;
   authorDiv.classList.add("author-div");
   newCard.appendChild(authorDiv);
 
   const pagesDiv = document.createElement("div");
-  pagesDiv.textContent = newBook.pages;
+  pagesDiv.textContent = newBook.pages + " pages";
   pagesDiv.classList.add("pages-div");
   newCard.appendChild(pagesDiv);
 
@@ -53,9 +53,8 @@ submitButton.addEventListener("click", (e) => {
 
   if (read.checked == true) {
     newBook.read = "Read";
-    readCheckbox.checked = true;
   } else {
-    newBook.read = "Not Read Yet";
+    newBook.read = "Not Read";
   }
 
   const readButton = document.createElement("button");
@@ -65,14 +64,12 @@ submitButton.addEventListener("click", (e) => {
 
   readButton.addEventListener("click", (e) => {
     newBook.read = "Read";
-    readCheckbox.checked = true;
   });
 
   myLibrary.push(newBook);
   title.value = "";
   author.value = "";
   pages.value = "";
-  read.checked = false;
 
   const removeButton = document.createElement("button");
   removeButton.classList.add("remove-button");

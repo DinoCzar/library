@@ -29,11 +29,13 @@ header button {
 #top {
   display: grid;
   justify-content: center;
-  padding: 50px;
+  padding-top: 25px;
 }
 
 #add-book {
   width: 175px;
+  background-color: #047857;
+  color: white;
 }
 
 #modal {

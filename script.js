@@ -51,6 +51,16 @@ submitButton.addEventListener("click", (e) => {
   buttonsDiv.classList.add("buttons-div");
   newCard.appendChild(buttonsDiv);
 
+  const readButton = document.createElement("button");
+  readButton.classList.add("read-button");
+  readButton.textContent = "Read";
+  buttonsDiv.appendChild(readButton);
+
+  const notReadButton = document.createElement("button");
+  notReadButton.classList.add("not-read-button");
+  notReadButton.textContent = "Not Read";
+  buttonsDiv.appendChild(notReadButton);
+
   const removeButton = document.createElement("button");
   removeButton.classList.add("remove-button");
   removeButton.textContent = "Remove Book";
@@ -63,22 +73,22 @@ submitButton.addEventListener("click", (e) => {
 
   if (read.checked == true) {
     newBook.read = "Read";
-
-    const readButton = document.createElement("button");
-    readButton.classList.add("read-button");
-    readButton.textContent = "Read";
-    buttonsDiv.appendChild(readButton);
+    notReadButton.style.display = "none";
   } else {
     newBook.read = "Not Read";
-
-    const notReadButton = document.createElement("button");
-    notReadButton.classList.add("not-read-button");
-    notReadButton.textContent = "Not Read";
-    buttonsDiv.appendChild(notReadButton);
+    readButton.style.display = "none";
   }
 
   readButton.addEventListener("click", (e) => {
+    newBook.read = "Not Read";
+    readButton.style.display = "none";
+    notReadButton.style.display = "block";
+  });
+
+  notReadButton.addEventListener("click", (e) => {
     newBook.read = "Read";
+    notReadButton.style.display = "none";
+    readButton.style.display = "block";
   });
 
   myLibrary.push(newBook);

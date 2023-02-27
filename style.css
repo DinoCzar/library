@@ -170,6 +170,10 @@ button:hover {
   background-color: #fca5a5;
 }
 
+.not-read-button:hover {
+  background-color: #ef4444;
+}
+
 .remove-button {
   grid-row-start: 2;
 }

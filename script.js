@@ -51,26 +51,6 @@ submitButton.addEventListener("click", (e) => {
   buttonsDiv.classList.add("buttons-div");
   newCard.appendChild(buttonsDiv);
 
-  if (read.checked == true) {
-    newBook.read = "Read";
-  } else {
-    newBook.read = "Not Read";
-  }
-
-  const readButton = document.createElement("button");
-  readButton.classList.add("read-button");
-  readButton.textContent = "Read";
-  buttonsDiv.appendChild(readButton);
-
-  readButton.addEventListener("click", (e) => {
-    newBook.read = "Read";
-  });
-
-  myLibrary.push(newBook);
-  title.value = "";
-  author.value = "";
-  pages.value = "";
-
   const removeButton = document.createElement("button");
   removeButton.classList.add("remove-button");
   removeButton.textContent = "Remove Book";
@@ -80,6 +60,31 @@ submitButton.addEventListener("click", (e) => {
     myLibrary.splice(newCard.dataset.number, 1);
     newCard.remove();
   });
+
+  if (read.checked == true) {
+    newBook.read = "Read";
+
+    const readButton = document.createElement("button");
+    readButton.classList.add("read-button");
+    readButton.textContent = "Read";
+    buttonsDiv.appendChild(readButton);
+  } else {
+    newBook.read = "Not Read";
+
+    const notReadButton = document.createElement("button");
+    notReadButton.classList.add("not-read-button");
+    notReadButton.textContent = "Not Read";
+    buttonsDiv.appendChild(notReadButton);
+  }
+
+  readButton.addEventListener("click", (e) => {
+    newBook.read = "Read";
+  });
+
+  myLibrary.push(newBook);
+  title.value = "";
+  author.value = "";
+  pages.value = "";
 });
 
 for (let i = 0; i < myLibrary.length; i++) {

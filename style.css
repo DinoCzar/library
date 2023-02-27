@@ -166,7 +166,7 @@ button:hover {
   grid-row-start: 1;
 }
 
-.not-read {
+.not-read-button {
   background-color: #fca5a5;
 }
 

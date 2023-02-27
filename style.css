@@ -61,7 +61,7 @@ legend {
 
 input,
 button {
-  width: 225px;
+  width: 200px;
   border: none;
   border-radius: 10px 10px 10px;
   font-size: 20px;
@@ -90,6 +90,10 @@ button {
   justify-content: center;
 }
 
+#submit {
+  width: 230px;
+}
+
 #overlay {
   display: none;
   position: fixed;
@@ -102,7 +106,7 @@ button {
 
 button {
   background-color: #6ee7b7;
-  width: 255px;
+  width: 200px;
 }
 
 #book-display {
@@ -117,7 +121,7 @@ button {
 
 .new-card {
   display: grid;
-  width: 260px;
+  width: 200px;
   grid-template-rows: 1fr 1fr 1fr 2fr;
   background-color: white;
   padding: 15px;
@@ -129,14 +133,17 @@ button {
 
 .title-div {
   grid-row-start: 1;
+  align-self: center;
 }
 
 .author-div {
   grid-row-start: 2;
+  align-self: center;
 }
 
 .pages-div {
   grid-row-start: 3;
+  align-self: center;
 }
 
 .buttons-div {

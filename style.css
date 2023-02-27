@@ -38,6 +38,10 @@ header button {
   color: white;
 }
 
+#add-book:hover {
+  background-color: #34d399;
+}
+
 #modal {
   display: none;
   position: fixed;
@@ -109,6 +113,10 @@ button {
 button {
   background-color: #6ee7b7;
   width: 220px;
+}
+
+button:hover {
+  background-color: #10b981;
 }
 
 #book-display {

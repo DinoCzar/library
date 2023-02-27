@@ -106,22 +106,20 @@ button {
 
 button {
   background-color: #6ee7b7;
-  width: 200px;
+  width: 220px;
 }
 
 #book-display {
-  padding: 15px;
+  padding: 10px;
   display: grid;
-  gap: 20px;
+  gap: 10px;
   grid-template-columns: 1fr 1fr;
-  width: 100%;
   justify-items: center;
-  justify-content: space-evenly;
 }
 
 .new-card {
   display: grid;
-  width: 200px;
+  width: 220px;
   grid-template-rows: 1fr 1fr 1fr 2fr;
   background-color: white;
   padding: 15px;
